@@ -63,7 +63,7 @@ namespace BancoDeQuestões.DAL
 
         public string DeletarQuestao(DadosId id)
         {
-            var idPesq = ObjectId.TryParse(id.indice, out _);
+            //var idPesq = ObjectId.TryParse(id.indice, out _);
 
             try
             {
@@ -75,13 +75,13 @@ namespace BancoDeQuestões.DAL
                 var filtro = Builders<Questao>.Filter.Where(x => x.Id == ObjectId.Parse(id.indice));
 
 
-                Expression<Func<Questao, bool>> filter = x => x.Id == ObjectId.Parse(id.indice);
+                //Expression<Func<Questao, bool>> filter = x => x.Id == ObjectId.Parse(id.indice);
 
-                Questao _questao = colecao.Find(filter).FirstOrDefault();
+                Questao _questao = colecao.Find(filtro).FirstOrDefault();
                 if (_questao != null)
                 {
                     _questao.flag = 1;
-                    ReplaceOneResult result = colecao.ReplaceOne(filter, _questao);
+                    ReplaceOneResult result = colecao.ReplaceOne(filtro, _questao);
                    
                 }
                 return "ok";

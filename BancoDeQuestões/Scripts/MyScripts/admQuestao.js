@@ -110,7 +110,8 @@ function sucessoVerQuestao(Json) {
             "                   <p class='mb - 2 font - size - base'> (E) " + obj.alternativaE +".</p>" +
             "			</div>" +
             "<div class='text-right'>" +
-            "	<input id='btnDeletar' indice=" + _id +" type='button' class='btn bg-teal-400' value = 'Deletar'/>" +
+            "	<input id='btnDeletar' indice=" + _id + " type='button' class='btn bg-danger-300' value = 'Deletar'/>" +
+            "	<input id='btnDeletar' indice=" + _id + " type='button' class='btn bg-success' value = 'Editar'/>" +
             "</div>" +
             "			</div>" +
             "		</form>" +
@@ -151,6 +152,7 @@ function deletarQuestão() {
            let dados = {
 
                indice: _id
+              
               
             }
         
